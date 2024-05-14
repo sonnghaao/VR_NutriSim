@@ -6,7 +6,7 @@ public class FloatingPickable : MonoBehaviour
 {
     // Floating parameters
     public float floatSpeed = 1f;
-    public float floatHeight = 0.5f;
+    public float floatHeight = 0.1f;
 
     // Rotation parameters
     public float rotationSpeed = 30f;
