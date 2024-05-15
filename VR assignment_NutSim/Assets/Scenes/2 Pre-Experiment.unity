@@ -478,6 +478,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 121595389}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 9c61357f7092a1a49be4dbc1c7e999b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 121595394}
   m_SourcePrefab: {fileID: 100100000, guid: 9c61357f7092a1a49be4dbc1c7e999b8, type: 3}
 --- !u!1 &121595388 stripped
 GameObject:
@@ -700,6 +704,24 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.2
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &121595394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121595388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df85618b0c371dd49a959827b20fc7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1774048164}
+  equipSound: {fileID: 8300000, guid: 8a939cc965be2b1448b9a9ce035dc0ad, type: 3}
+  wrongSound: {fileID: 8300000, guid: 1b53e0b94bc4fef4eb2797ba269aaeb0, type: 3}
+  wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
+  panel: {fileID: 1533818166}
+  cdManager: {fileID: 2144448216}
 --- !u!1001 &126403382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1891,7 +1913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_System: {fileID: 383461066}
-  m_MoveSpeed: 1
+  m_MoveSpeed: 2
   m_EnableStrafe: 1
   m_EnableFly: 0
   m_UseGravity: 1
@@ -2718,9 +2740,10 @@ GameObject:
   - component: {fileID: 644545261}
   - component: {fileID: 644545260}
   - component: {fileID: 644545259}
+  - component: {fileID: 644545262}
   m_Layer: 0
-  m_Name: shoes cover
-  m_TagString: Untagged
+  m_Name: safety shoes
+  m_TagString: SafetyEquip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2957,6 +2980,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &644545262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644545256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df85618b0c371dd49a959827b20fc7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1774048164}
+  equipSound: {fileID: 8300000, guid: 8a939cc965be2b1448b9a9ce035dc0ad, type: 3}
+  wrongSound: {fileID: 8300000, guid: 1b53e0b94bc4fef4eb2797ba269aaeb0, type: 3}
+  wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
+  panel: {fileID: 1533818166}
+  cdManager: {fileID: 2144448216}
 --- !u!1001 &678260225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3943,7 +3984,17 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 8799b978b53d14f47a80966c137aef66,
         type: 3}
       propertyPath: m_Name
-      value: Clothes
+      value: lab coat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8799b978b53d14f47a80966c137aef66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8799b978b53d14f47a80966c137aef66,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafetyEquip
       objectReference: {fileID: 0}
     - target: {fileID: 1666705396219226071, guid: 8799b978b53d14f47a80966c137aef66,
         type: 3}
@@ -4055,6 +4106,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 830618624}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8799b978b53d14f47a80966c137aef66,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 830618625}
   m_SourcePrefab: {fileID: 100100000, guid: 8799b978b53d14f47a80966c137aef66, type: 3}
 --- !u!1 &830618619 stripped
 GameObject:
@@ -4277,6 +4332,24 @@ MonoBehaviour:
   floatSpeed: 1
   floatHeight: 0.1
   rotationSpeed: 30
+--- !u!114 &830618625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830618619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df85618b0c371dd49a959827b20fc7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1774048164}
+  equipSound: {fileID: 8300000, guid: 8a939cc965be2b1448b9a9ce035dc0ad, type: 3}
+  wrongSound: {fileID: 8300000, guid: 1b53e0b94bc4fef4eb2797ba269aaeb0, type: 3}
+  wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
+  panel: {fileID: 1533818166}
+  cdManager: {fileID: 2144448216}
 --- !u!1001 &839302061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4418,7 +4491,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 65fad2cd9edfce64799b874d5ad6a5be,
         type: 3}
       propertyPath: m_Name
-      value: safety glass
+      value: safety goggles
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 65fad2cd9edfce64799b874d5ad6a5be,
+        type: 3}
+      propertyPath: m_TagString
+      value: SafetyEquip
       objectReference: {fileID: 0}
     - target: {fileID: 1472304788746581875, guid: 65fad2cd9edfce64799b874d5ad6a5be,
         type: 3}
@@ -4486,6 +4564,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1758116607}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 65fad2cd9edfce64799b874d5ad6a5be,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1758116612}
   m_SourcePrefab: {fileID: 100100000, guid: 65fad2cd9edfce64799b874d5ad6a5be, type: 3}
 --- !u!1001 &865400093
 PrefabInstance:
@@ -6025,6 +6107,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1119042992}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7afc72b9f3e1cd2468485bcf82868f6f,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1119042997}
   m_SourcePrefab: {fileID: 100100000, guid: 7afc72b9f3e1cd2468485bcf82868f6f, type: 3}
 --- !u!1 &1119042991 stripped
 GameObject:
@@ -6247,6 +6333,24 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.19
   m_Center: {x: 0, y: 0.12, z: 0}
+--- !u!114 &1119042997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119042991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df85618b0c371dd49a959827b20fc7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1774048164}
+  equipSound: {fileID: 8300000, guid: 8a939cc965be2b1448b9a9ce035dc0ad, type: 3}
+  wrongSound: {fileID: 8300000, guid: 1b53e0b94bc4fef4eb2797ba269aaeb0, type: 3}
+  wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
+  panel: {fileID: 1533818166}
+  cdManager: {fileID: 2144448216}
 --- !u!1001 &1129415839
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8608,6 +8712,7 @@ GameObject:
   - component: {fileID: 1533818167}
   - component: {fileID: 1533818169}
   - component: {fileID: 1533818168}
+  - component: {fileID: 1533818170}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -8673,6 +8778,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533818166}
   m_CullTransparentMesh: 1
+--- !u!114 &1533818170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533818166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec88141c79854684eafde642ef1a8e47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1538932682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9955,6 +10072,24 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.12, y: 0.06, z: 0.13}
   m_Center: {x: 0, y: 0.027, z: -0.03}
+--- !u!114 &1758116612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758116605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df85618b0c371dd49a959827b20fc7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1774048164}
+  equipSound: {fileID: 8300000, guid: 8a939cc965be2b1448b9a9ce035dc0ad, type: 3}
+  wrongSound: {fileID: 8300000, guid: 1b53e0b94bc4fef4eb2797ba269aaeb0, type: 3}
+  wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
+  panel: {fileID: 1533818166}
+  cdManager: {fileID: 2144448216}
 --- !u!1 &1760237448
 GameObject:
   m_ObjectHideFlags: 0
@@ -11546,6 +11681,7 @@ GameObject:
   - component: {fileID: 2138075906}
   - component: {fileID: 2138075909}
   - component: {fileID: 2138075910}
+  - component: {fileID: 2138075911}
   m_Layer: 0
   m_Name: puma sandal
   m_TagString: Untagged
@@ -11785,6 +11921,72 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &2138075911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138075905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df85618b0c371dd49a959827b20fc7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 1774048164}
+  equipSound: {fileID: 8300000, guid: 8a939cc965be2b1448b9a9ce035dc0ad, type: 3}
+  wrongSound: {fileID: 8300000, guid: 1b53e0b94bc4fef4eb2797ba269aaeb0, type: 3}
+  wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
+  panel: {fileID: 1533818166}
+  cdManager: {fileID: 2144448216}
+--- !u!1 &2144448215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2144448217}
+  - component: {fileID: 2144448216}
+  m_Layer: 0
+  m_Name: ConditionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2144448216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144448215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b40e456ec9ec77a42a533fece340716a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  otherScript: {fileID: 1029018139}
+  gratzSound: {fileID: 8300000, guid: f400d1f7f85533948a5ca25f46e2acd0, type: 3}
+  audioSource: {fileID: 1774048164}
+  panel: {fileID: 1533818166}
+--- !u!4 &2144448217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144448215}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.437123, y: 2.3973176, z: -6.392872}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2146548542
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11858,3 +12060,4 @@ SceneRoots:
   - {fileID: 286828189}
   - {fileID: 799279249}
   - {fileID: 1993207161}
+  - {fileID: 2144448217}

@@ -41,7 +41,7 @@ public class ButtonPushOpenDoor : MonoBehaviour
         {
             textMeshPro.text = message;
         }
-        StartCoroutine(HidePanelAfterDelay(6f)); 
+        //StartCoroutine(HidePanelAfterDelay(6f)); 
     }
 
     IEnumerator HidePanelAfterDelay(float delay)
@@ -50,9 +50,8 @@ public class ButtonPushOpenDoor : MonoBehaviour
         panel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetBooleanValue(bool b)
     {
-
+        isEquipReady = b;
     }
 }
