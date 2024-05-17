@@ -35,7 +35,7 @@ public class ConditionManager : MonoBehaviour
 
     IEnumerator DelayBeforeAudio()
     {
-        yield return new WaitForSeconds(6f); 
+        yield return new WaitForSeconds(5.5f); 
         audioSource.PlayOneShot(gratzSound);
         ShowPanelWithMessage("You're all set to step into the lab.");
         otherScript.SetBooleanValue(true);
