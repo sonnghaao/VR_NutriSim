@@ -13,6 +13,8 @@ public class TaskUIManager : MonoBehaviour
     public AudioClip welcomeSpeech;
     public AudioClip gatherSpeech;
     public AudioClip bunsenSpeech;
+    public AudioClip warmMilkSpeech;
+
 
 
     private int taskIndex;
@@ -21,14 +23,16 @@ public class TaskUIManager : MonoBehaviour
     private bool hasShownStartGuide;
     private bool hasShownWelcomeMessage;
     private bool hasShownBunsenMessage;
+    private bool hasShownMilkOnMessage;
 
     void Start()
     {
-        taskIndex = 0;
+        taskIndex = 1;
         taskMsg = string.Empty;
+        hasShownStartGuide = true;
         hasShownWelcomeMessage = false;
         hasShownBunsenMessage = false;
-
+        hasShownMilkOnMessage = false;
     }
 
     // Update is called once per frame
@@ -47,7 +51,7 @@ public class TaskUIManager : MonoBehaviour
            case 1: if (!hasShownWelcomeMessage)
                 {
                     taskMsg = "Gathering the required materials ";
-                    StartCoroutine(ShowPanelWithMessage("Welcome to Experiment Turn Milk into Cheese", 6f, "Please proceed to the black table at the back to gather the required materials."));
+                    StartCoroutine(ShowPanelWithMessage("Welcome to Experiment Turn Milk into Cheese", 6f, "Please proceed to the black table at the back to gather the required materials and tools."));
                     hasShownWelcomeMessage = true;
                 }
                 break;
@@ -58,6 +62,17 @@ public class TaskUIManager : MonoBehaviour
                     audioSource.PlayOneShot(bunsenSpeech);
                     hasShownBunsenMessage = true;
                 }
+                break;
+            case 3:
+                if(!hasShownMilkOnMessage)
+                {
+                    taskMsg = "Warm up the milk.";
+                    audioSource.PlayOneShot(warmMilkSpeech);
+                    hasShownMilkOnMessage=true;
+                }
+                break;
+            case 4:
+                taskMsg = "Squeeze lemon into milk";
                 break;
         }
 

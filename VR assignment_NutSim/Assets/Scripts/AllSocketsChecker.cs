@@ -12,6 +12,8 @@ public class AllSocketsChecker : MonoBehaviour
     public AudioClip beepSound;
     public AudioClip gatherCompleteSpeech;
     public TaskUIManager taskUIManager;
+    public MaterialGrab mg;
+    public XRGrabInteractable stove;
     private string nextStepMessage= "All materials has been gathered! Lets proceed to next step."; // Message to show when all sockets are filled
 
     private bool isGatherComplete;
@@ -63,12 +65,13 @@ public class AllSocketsChecker : MonoBehaviour
         isGatherComplete= true;
         audioSource.PlayOneShot(beepSound);
         audioSource.PlayOneShot(gatherCompleteSpeech);
+        mg.CompleteGather();
+        stove.enabled = true;
         TMP_Text textMeshPro = panel.GetComponentInChildren<TMP_Text>();
         if (textMeshPro != null)
         {
             textMeshPro.text = message;
         }
-
         StartCoroutine(DelayedTaskIndexIncrement(5.5f));
     }
 
