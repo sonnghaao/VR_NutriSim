@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class LemonTriggerInteractor : MonoBehaviour
+public class MilkTriggerInteractor : MonoBehaviour
 {
-
-
-    public Collider triggerZone; // Public variable for the trigger zone
+    public Collider triggerZone; 
     public AudioSource audioSource;
-    public AudioClip squeezeSound;
-    public AudioClip waitMilkReactSpeech;
-    public WarmingMilk wm;
+    public AudioClip pourSound;
+    public AudioClip intoWhiteBowlSpeech;
     public TaskUIManager taskUIManager;
+    public GameObject strainer;
     public GameObject milk;
+    public StrainerSocketLogic strainerSocketLogic;
 
     private XRGrabInteractable grabInteractable;
-    private bool isInTriggerZone = false; // To track if the object is inside the trigger zone
-    private bool hasSqueeze;
-
-
+    private bool isInTriggerZone = false;
+    private bool hasPour;
 
     void Start()
     {
@@ -28,15 +25,7 @@ public class LemonTriggerInteractor : MonoBehaviour
         {
             grabInteractable.activated.AddListener(OnTriggerPressed);
         }
-        hasSqueeze = false;
-    }
-
-    private void OnDestroy()
-    {
-        if (grabInteractable != null)
-        {
-            grabInteractable.activated.RemoveListener(OnTriggerPressed);
-        }
+        hasPour = false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -68,32 +57,24 @@ public class LemonTriggerInteractor : MonoBehaviour
 
     private void ExecuteLogic()
     {
-        if (wm.GetMilkHeat())
+        if (strainerSocketLogic.GetSetUp())
         {
-            if (!hasSqueeze)
+            if (!hasPour)
             {
-                hasSqueeze=true;
-                audioSource.PlayOneShot(squeezeSound);
-                audioSource.PlayOneShot(waitMilkReactSpeech);
-                StartCoroutine(DelayedExecution());
+                audioSource.PlayOneShot(pourSound);
+                audioSource.PlayOneShot(intoWhiteBowlSpeech);
+                strainer.transform.Find("curdle").gameObject.SetActive(true);
+                milk.transform.Find("AfterWarm").gameObject.SetActive(false);
+                taskUIManager.TaskIndexInc();
+                hasPour=true;
             }
-            
         }
+        
 
     }
 
-    private IEnumerator DelayedExecution()
+    public bool GetPour()
     {
-        Debug.Log("Starting 10 second delay.");
-        yield return new WaitForSeconds(10f);
-        taskUIManager.TaskIndexInc();
-
-        milk.transform.Find("milk liquid").gameObject.SetActive(false);
-        milk.transform.Find("AfterWarm").gameObject.SetActive(true);
-    }
-
-    public bool GetSqueeze()
-    {
-        return hasSqueeze;
+        return hasPour;
     }
 }

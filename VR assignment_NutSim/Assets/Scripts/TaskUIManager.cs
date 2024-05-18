@@ -14,7 +14,7 @@ public class TaskUIManager : MonoBehaviour
     public AudioClip gatherSpeech;
     public AudioClip bunsenSpeech;
     public AudioClip warmMilkSpeech;
-
+    public AudioClip setStrainerSpeech;
 
 
     private int taskIndex;
@@ -24,15 +24,17 @@ public class TaskUIManager : MonoBehaviour
     private bool hasShownWelcomeMessage;
     private bool hasShownBunsenMessage;
     private bool hasShownMilkOnMessage;
+    private bool hasShownSetStrainerMsg;
 
     void Start()
     {
-        taskIndex = 1;
+        taskIndex = 0;
         taskMsg = string.Empty;
-        hasShownStartGuide = true;
+        hasShownStartGuide = false;
         hasShownWelcomeMessage = false;
         hasShownBunsenMessage = false;
         hasShownMilkOnMessage = false;
+        hasShownSetStrainerMsg = false;
     }
 
     // Update is called once per frame
@@ -74,6 +76,25 @@ public class TaskUIManager : MonoBehaviour
             case 4:
                 taskMsg = "Squeeze lemon into milk";
                 break;
+            case 5:
+                if (!hasShownSetStrainerMsg)
+                {
+                    taskMsg = "Set the strainer over a glass bowl.";
+                    audioSource.PlayOneShot(setStrainerSpeech);
+                    ShowPanelWithMessage3("The milk should curdle now. Next, place the strainer over the glass bowl.");
+                    hasShownSetStrainerMsg = true;
+                }
+                break;
+            case 6:
+                taskMsg = "Pour the curds into strainer";
+                break;
+            case 7:
+                taskMsg = "Pour the cheese into a clean Bowl";
+                break;
+            case 8:
+                taskMsg = "Congratulation!";
+                break;
+
         }
 
         ShowTaskPanelWithMessage(taskMsg);
@@ -122,6 +143,18 @@ public class TaskUIManager : MonoBehaviour
 
     }
 
+
+    void ShowPanelWithMessage3(string message)
+    {
+        panel.SetActive(true);
+        TMP_Text textMeshPro = panel.GetComponentInChildren<TMP_Text>();
+        if (textMeshPro != null)
+        {
+            textMeshPro.text = message;
+        }
+
+
+    }
 
     void ShowTaskPanelWithMessage(string message)
     {

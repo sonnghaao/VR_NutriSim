@@ -90,7 +90,7 @@ public class WarmingMilk : MonoBehaviour
             worldSpaceCanvas.SetActive(true);
         }
 
-        float countdown = 30f;
+        float countdown = 15f;
         while (countdown > 0)
         {
             countdown -= Time.deltaTime;
