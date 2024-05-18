@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class TaskUIManager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class TaskUIManager : MonoBehaviour
     public AudioClip bunsenSpeech;
     public AudioClip warmMilkSpeech;
     public AudioClip setStrainerSpeech;
+    public ScreenFader screenFader;
 
 
     private int taskIndex;
@@ -25,6 +27,7 @@ public class TaskUIManager : MonoBehaviour
     private bool hasShownBunsenMessage;
     private bool hasShownMilkOnMessage;
     private bool hasShownSetStrainerMsg;
+    private bool isBackMenu;
 
     void Start()
     {
@@ -35,6 +38,7 @@ public class TaskUIManager : MonoBehaviour
         hasShownBunsenMessage = false;
         hasShownMilkOnMessage = false;
         hasShownSetStrainerMsg = false;
+        isBackMenu = false;
     }
 
     // Update is called once per frame
@@ -92,7 +96,13 @@ public class TaskUIManager : MonoBehaviour
                 taskMsg = "Pour the cheese into a clean Bowl";
                 break;
             case 8:
-                taskMsg = "Congratulation!";
+                if (!isBackMenu)
+                {
+                    taskMsg = "Congratulation!";
+                    StartCoroutine(BackToMainMenu());
+                    isBackMenu = true;
+                }
+
                 break;
 
         }
@@ -143,6 +153,12 @@ public class TaskUIManager : MonoBehaviour
 
     }
 
+    IEnumerator BackToMainMenu()
+    {
+        yield return new WaitForSeconds(15f);
+        yield return StartCoroutine(screenFader.FadeIn());
+        SceneManager.LoadScene("1 Start Scene");
+    }
 
     void ShowPanelWithMessage3(string message)
     {
