@@ -4566,7 +4566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 147871221}
   - component: {fileID: 147871223}
-  - component: {fileID: 147871222}
+  - component: {fileID: 147871224}
   m_Layer: 0
   m_Name: Socket Interactor 3
   m_TagString: Socket
@@ -4589,27 +4589,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1133142983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &147871222
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147871220}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &147871223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4671,6 +4650,27 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!65 &147871224
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147871220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7, y: 0.4, z: 0.4}
+  m_Center: {x: 0, y: 0.14, z: 0}
 --- !u!1 &149286737
 GameObject:
   m_ObjectHideFlags: 0
@@ -11446,8 +11446,8 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
---- !u!135 &424053651
-SphereCollider:
+--- !u!65 &424053651
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11465,8 +11465,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7, y: 0.4, z: 0.4}
+  m_Center: {x: 0, y: 0.14, z: 0}
 --- !u!1 &432965496
 GameObject:
   m_ObjectHideFlags: 0
@@ -14374,7 +14374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 580782012}
   - component: {fileID: 580782014}
-  - component: {fileID: 580782013}
+  - component: {fileID: 580782015}
   m_Layer: 0
   m_Name: Socket Interactor 5
   m_TagString: Socket
@@ -14391,33 +14391,12 @@ Transform:
   m_GameObject: {fileID: 580782011}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.41399884, y: 1.031, z: -3.591}
+  m_LocalPosition: {x: -0.41399884, y: 1.031, z: -3.568}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1133142983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &580782013
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 580782011}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &580782014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14479,6 +14458,27 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!65 &580782015
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580782011}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7, y: 0.4, z: 0.4}
+  m_Center: {x: 0, y: 0.14, z: 0}
 --- !u!1 &583192557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 192030, guid: 088b5f04d52a542ec975e88d7d9934f5,
@@ -23793,7 +23793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995519634}
   - component: {fileID: 995519636}
-  - component: {fileID: 995519635}
+  - component: {fileID: 995519637}
   m_Layer: 0
   m_Name: Socket Interactor 4
   m_TagString: Socket
@@ -23816,27 +23816,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1133142983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &995519635
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 995519633}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &995519636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23898,6 +23877,27 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!65 &995519637
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995519633}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7, y: 0.4, z: 0.4}
+  m_Center: {x: 0, y: 0.14, z: 0}
 --- !u!1 &997732374
 GameObject:
   m_ObjectHideFlags: 0
@@ -28508,7 +28508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1173576989}
   - component: {fileID: 1173576991}
-  - component: {fileID: 1173576990}
+  - component: {fileID: 1173576992}
   m_Layer: 0
   m_Name: Socket Interactor 2
   m_TagString: Socket
@@ -28525,33 +28525,12 @@ Transform:
   m_GameObject: {fileID: 1173576988}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.414, y: 1.031, z: -2.099}
+  m_LocalPosition: {x: -0.414, y: 1.031, z: -2.153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1133142983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &1173576990
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1173576988}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1173576991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28613,6 +28592,27 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
+--- !u!65 &1173576992
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173576988}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7, y: 0.4, z: 0.4}
+  m_Center: {x: 0, y: 0.14, z: 0}
 --- !u!1 &1188085938
 GameObject:
   m_ObjectHideFlags: 0

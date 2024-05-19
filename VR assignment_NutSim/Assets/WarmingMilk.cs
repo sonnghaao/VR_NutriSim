@@ -53,10 +53,15 @@ public class WarmingMilk : MonoBehaviour
         }
 
         // Start the warm-up coroutine
-        if (warmUpCoroutine == null)
+        if (!isWarmedUp)
         {
-            warmUpCoroutine = StartCoroutine(WarmUpRoutine(args.interactableObject));
+            if (warmUpCoroutine == null)
+            {
+
+                warmUpCoroutine = StartCoroutine(WarmUpRoutine(args.interactableObject));
+            }
         }
+        
     }
 
     private void OnSelectExited(SelectExitEventArgs args)

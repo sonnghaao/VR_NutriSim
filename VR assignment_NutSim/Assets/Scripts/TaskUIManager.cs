@@ -155,7 +155,7 @@ public class TaskUIManager : MonoBehaviour
 
     IEnumerator BackToMainMenu()
     {
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(12f);
         yield return StartCoroutine(screenFader.FadeIn());
         SceneManager.LoadScene("1 Start Scene");
     }
