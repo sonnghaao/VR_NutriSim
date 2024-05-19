@@ -14,6 +14,7 @@ public class LemonTriggerInteractor : MonoBehaviour
     public WarmingMilk wm;
     public TaskUIManager taskUIManager;
     public GameObject milk;
+    public GameObject glassBowlSocket;
 
     private XRGrabInteractable grabInteractable;
     private bool isInTriggerZone = false; // To track if the object is inside the trigger zone
@@ -90,6 +91,7 @@ public class LemonTriggerInteractor : MonoBehaviour
 
         milk.transform.Find("milk liquid").gameObject.SetActive(false);
         milk.transform.Find("AfterWarm").gameObject.SetActive(true);
+        glassBowlSocket.gameObject.SetActive(true);
     }
 
     public bool GetSqueeze()
