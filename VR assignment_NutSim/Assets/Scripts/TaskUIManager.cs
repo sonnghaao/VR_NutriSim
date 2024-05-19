@@ -28,6 +28,8 @@ public class TaskUIManager : MonoBehaviour
     private bool hasShownMilkOnMessage;
     private bool hasShownSetStrainerMsg;
     private bool isBackMenu;
+    private int gatherCount;
+    private int safetyEquipCount;
 
     void Start()
     {
@@ -39,6 +41,8 @@ public class TaskUIManager : MonoBehaviour
         hasShownMilkOnMessage = false;
         hasShownSetStrainerMsg = false;
         isBackMenu = false;
+        gatherCount = 0;
+        safetyEquipCount = 0;
     }
 
     // Update is called once per frame
@@ -52,11 +56,13 @@ public class TaskUIManager : MonoBehaviour
 
         switch(taskIndex)
         {
-           case 0: taskMsg = "Access into the laboratory."; 
+           case 0: taskMsg = "Access into the laboratory.(" + safetyEquipCount + "/3)"; 
                 break;
-           case 1: if (!hasShownWelcomeMessage)
+           case 1:
+                taskMsg = "Gathering the required materials.(" + gatherCount + "/5)";
+                if (!hasShownWelcomeMessage)
                 {
-                    taskMsg = "Gathering the required materials ";
+                    
                     StartCoroutine(ShowPanelWithMessage("Welcome to Experiment Turn Milk into Cheese", 6f, "Please proceed to the black table at the back to gather the required materials and tools."));
                     hasShownWelcomeMessage = true;
                 }
@@ -185,4 +191,20 @@ public class TaskUIManager : MonoBehaviour
     {
         taskIndex++;
     }
+
+    public void GatherCountInc()
+    {
+        gatherCount++;
+    }
+
+    public void GatherCountDec()
+    {
+        gatherCount--;
+    }
+
+    public void SafetyEquipCountInc()
+    {
+        safetyEquipCount++;
+    }
+
 }

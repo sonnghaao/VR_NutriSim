@@ -3642,6 +3642,7 @@ MonoBehaviour:
   wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
   panel: {fileID: 1533818166}
   cdManager: {fileID: 2144448216}
+  taskUIManager: {fileID: 2144448218}
 --- !u!4 &121595395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9c61357f7092a1a49be4dbc1c7e999b8,
@@ -15615,6 +15616,7 @@ MonoBehaviour:
   wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
   panel: {fileID: 1533818166}
   cdManager: {fileID: 2144448216}
+  taskUIManager: {fileID: 2144448218}
 --- !u!1 &646180203
 GameObject:
   m_ObjectHideFlags: 0
@@ -19737,6 +19739,7 @@ MonoBehaviour:
   wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
   panel: {fileID: 1533818166}
   cdManager: {fileID: 2144448216}
+  taskUIManager: {fileID: 2144448218}
 --- !u!4 &830618626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8799b978b53d14f47a80966c137aef66,
@@ -27486,6 +27489,7 @@ MonoBehaviour:
   wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
   panel: {fileID: 1533818166}
   cdManager: {fileID: 2144448216}
+  taskUIManager: {fileID: 2144448218}
 --- !u!4 &1119042998 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7afc72b9f3e1cd2468485bcf82868f6f,
@@ -44099,6 +44103,7 @@ MonoBehaviour:
   wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
   panel: {fileID: 1533818166}
   cdManager: {fileID: 2144448216}
+  taskUIManager: {fileID: 2144448218}
 --- !u!4 &1758116613 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 65fad2cd9edfce64799b874d5ad6a5be,
@@ -52758,6 +52763,7 @@ MonoBehaviour:
   wrongSpeech: {fileID: 8300000, guid: 700ee46ea1e076040946b31fd22e1e67, type: 3}
   panel: {fileID: 1533818166}
   cdManager: {fileID: 2144448216}
+  taskUIManager: {fileID: 2144448218}
 --- !u!1 &2138556742
 GameObject:
   m_ObjectHideFlags: 0

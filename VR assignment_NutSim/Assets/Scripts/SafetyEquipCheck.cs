@@ -14,6 +14,7 @@ public class SafetyEquipCheck : MonoBehaviour
     public GameObject panel;
     private string message;
     public ConditionManager cdManager;
+    public TaskUIManager taskUIManager;
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class SafetyEquipCheck : MonoBehaviour
             Destroy(gameObject);
             audioSource.PlayOneShot(equipSound);
             message = "You have put on " + name +".";
+            taskUIManager.SafetyEquipCountInc();
             ShowPanelWithMessage(message);
             cdManager.putOn();
         }

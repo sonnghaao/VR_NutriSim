@@ -33,11 +33,13 @@ public class AllSocketsChecker : MonoBehaviour
     {
         CheckAllSockets();
         audioSource.PlayOneShot(beepSound);
+        taskUIManager.GatherCountInc();
     }
 
     private void OnSelectExited(SelectExitEventArgs args)
     {
         CheckAllSockets();
+        taskUIManager.GatherCountDec();
     }
 
     private void CheckAllSockets()

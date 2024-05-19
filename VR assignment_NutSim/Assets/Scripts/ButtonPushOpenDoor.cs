@@ -17,11 +17,13 @@ public class ButtonPushOpenDoor : MonoBehaviour
     bool isEquipReady = false;
     public TaskUIManager taskUImanager;
 
+    private bool isDoorOpen;
 
     void Start()
     {
         GetComponent<XRSimpleInteractable>().selectEntered.AddListener(x => ToggleDoorOpen());
         panel.SetActive(false); // make sure the panel is invisible at begining
+        isDoorOpen = false;
     }
 
     public void ToggleDoorOpen()
@@ -34,8 +36,14 @@ public class ButtonPushOpenDoor : MonoBehaviour
         }
         else
         {
-            audioSource.PlayOneShot(beepSound);
-            StartCoroutine(PlayOpenDoorSoundAndMovePlayer());
+            if(!isDoorOpen)
+            {
+                audioSource.PlayOneShot(beepSound);
+                isDoorOpen = true;
+                StartCoroutine(PlayOpenDoorSoundAndMovePlayer());
+            }
+            
+            
         }
     }
 
@@ -53,11 +61,12 @@ public class ButtonPushOpenDoor : MonoBehaviour
     {
         yield return StartCoroutine(screenFader.FadeIn());
         audioSource.PlayOneShot(openDoorSound);
-        yield return new WaitForSeconds(openDoorSound.length); 
+        yield return new WaitForSeconds(openDoorSound.length);
         player.transform.position = targetPos.transform.position;
         player.transform.rotation = targetPos.transform.rotation;
         taskUImanager.TaskIndexInc();
         yield return StartCoroutine(screenFader.FadeOut());
+
     }
 
     public void SetBooleanValue(bool b)
