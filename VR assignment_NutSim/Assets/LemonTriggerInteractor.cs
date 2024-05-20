@@ -64,7 +64,7 @@ public class LemonTriggerInteractor : MonoBehaviour
     private void OnTriggerPressed(ActivateEventArgs args)
     {
         // Check if the trigger button is pressed and the object is inside the trigger zone
-        InstantiateDrop(); // debug purpose
+        //InstantiateDrop();  //debug purpose
         if (isInTriggerZone)
         {
             ExecuteLogic();
