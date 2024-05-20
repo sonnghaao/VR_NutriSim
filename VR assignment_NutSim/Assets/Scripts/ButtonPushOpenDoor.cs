@@ -16,6 +16,7 @@ public class ButtonPushOpenDoor : MonoBehaviour
     public ScreenFader screenFader;
     bool isEquipReady = false;
     public TaskUIManager taskUImanager;
+    
 
     private bool isDoorOpen;
 
@@ -62,6 +63,7 @@ public class ButtonPushOpenDoor : MonoBehaviour
         yield return StartCoroutine(screenFader.FadeIn());
         audioSource.PlayOneShot(openDoorSound);
         yield return new WaitForSeconds(openDoorSound.length);
+        
         player.transform.position = targetPos.transform.position;
         player.transform.rotation = targetPos.transform.rotation;
         taskUImanager.TaskIndexInc();

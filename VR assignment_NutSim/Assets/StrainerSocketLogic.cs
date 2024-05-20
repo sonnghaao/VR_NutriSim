@@ -10,6 +10,7 @@ public class StrainerSocketLogic : MonoBehaviour
 
     public AudioSource audioSource;
     public AudioClip putCurdSpeech;
+    public AudioClip beepSound;
     public LemonTriggerInteractor lemonTrigger;
     public TaskUIManager taskUIManager;
 
@@ -43,6 +44,7 @@ public class StrainerSocketLogic : MonoBehaviour
             if (!isSetUp)
             {
                 audioSource.PlayOneShot(putCurdSpeech);
+                audioSource.PlayOneShot(beepSound);
                 taskUIManager.TaskIndexInc();
                 isSetUp = true;
             }

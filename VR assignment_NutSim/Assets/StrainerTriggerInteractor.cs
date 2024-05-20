@@ -65,6 +65,7 @@ public class StrainerTriggerInteractor : MonoBehaviour
                 audioSource.PlayOneShot(gratzSpeech);
                 strainer.transform.Find("curdle").gameObject.SetActive(false);
                 whiteBowl.transform.Find("curdle").gameObject.SetActive(true);
+                hasPut = true;
                 taskUIManager.TaskIndexInc();
             }
         }

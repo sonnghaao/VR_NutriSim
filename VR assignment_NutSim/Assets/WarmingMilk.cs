@@ -16,6 +16,7 @@ public class WarmingMilk : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip warmMilkSpeech;
     public AudioClip warmFinSpeech;
+    public AudioClip beepSound;
     public TaskUIManager taskUIManager;
 
 
@@ -42,6 +43,7 @@ public class WarmingMilk : MonoBehaviour
         // When an object is placed in the socket, disable the XRGrabInteractable on the parent
         if (!isPlayedWarmSpeech)
         {
+            audioSource.PlayOneShot(beepSound);
             audioSource.PlayOneShot(warmMilkSpeech);
             isPlayedWarmSpeech=true;
         }

@@ -15,11 +15,13 @@ public class LemonTriggerInteractor : MonoBehaviour
     public TaskUIManager taskUIManager;
     public GameObject milk;
     public GameObject glassBowlSocket;
+    public GameObject dropPrefab; // Reference to the drop prefab
+    public Transform dropSpawnPoint;
 
     private XRGrabInteractable grabInteractable;
     private bool isInTriggerZone = false; // To track if the object is inside the trigger zone
     private bool hasSqueeze;
-
+    private Animator animator;
 
 
     void Start()
@@ -30,6 +32,7 @@ public class LemonTriggerInteractor : MonoBehaviour
             grabInteractable.activated.AddListener(OnTriggerPressed);
         }
         hasSqueeze = false;
+        animator = GetComponent<Animator>();
     }
 
     private void OnDestroy()
@@ -61,6 +64,7 @@ public class LemonTriggerInteractor : MonoBehaviour
     private void OnTriggerPressed(ActivateEventArgs args)
     {
         // Check if the trigger button is pressed and the object is inside the trigger zone
+        InstantiateDrop(); // debug purpose
         if (isInTriggerZone)
         {
             ExecuteLogic();
@@ -75,12 +79,27 @@ public class LemonTriggerInteractor : MonoBehaviour
             {
                 hasSqueeze=true;
                 audioSource.PlayOneShot(squeezeSound);
+                animator.SetBool("isSqueeze", true);
                 audioSource.PlayOneShot(waitMilkReactSpeech);
+                InstantiateDrop(); // Instantiate the drop
                 StartCoroutine(DelayedExecution());
             }
             
         }
 
+    }
+
+    private void InstantiateDrop()
+    {
+        if (dropPrefab != null && dropSpawnPoint != null)
+        {
+            GameObject drop = Instantiate(dropPrefab, dropSpawnPoint.position, Quaternion.identity);
+            Rigidbody rb = drop.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.AddForce(Vector3.down * 2.5f, ForceMode.Impulse); // Apply a downward force to the drop
+            }
+        }
     }
 
     private IEnumerator DelayedExecution()
