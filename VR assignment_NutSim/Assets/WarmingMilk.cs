@@ -10,6 +10,7 @@ public class WarmingMilk : MonoBehaviour
     private Coroutine warmUpCoroutine;
     private bool isWarmedUp;
     private bool isPlayedWarmSpeech;
+    private bool isOverHeat;
 
     public GameObject worldSpaceCanvas; // Reference to the world space canvas
     public TMP_Text countdownText; // Reference to the TextMeshPro text component
@@ -17,7 +18,14 @@ public class WarmingMilk : MonoBehaviour
     public AudioClip warmMilkSpeech;
     public AudioClip warmFinSpeech;
     public AudioClip beepSound;
+    public AudioClip overHeatSpeech;
     public TaskUIManager taskUIManager;
+    public GameObject milk;
+    public GameObject stove;
+    public Transform milkPos;
+    public Transform stovePos;
+    public BunsenBurner bunsenBurner;
+    public ScreenFader screenFader;
 
 
     void Start()
@@ -30,6 +38,7 @@ public class WarmingMilk : MonoBehaviour
 
         isWarmedUp = false;
         isPlayedWarmSpeech = false;
+        isOverHeat = false;
 
         // Initially hide the world space canvas
         if (worldSpaceCanvas != null)
@@ -116,6 +125,19 @@ public class WarmingMilk : MonoBehaviour
         {
             isWarmedUp = true;
             ProceedWithNextLogic();
+            countdown = 10f;
+            while (countdown > 0)
+            {
+                countdown -= Time.deltaTime;
+
+                if (countdownText != null)
+                {
+                    countdownText.text = "Remove count down: " + Mathf.Ceil(countdown).ToString() + "s";
+                }
+
+                yield return null;
+            }
+
         }
 
         // Hide the world space canvas
@@ -132,6 +154,46 @@ public class WarmingMilk : MonoBehaviour
         // Add your logic here
         audioSource.PlayOneShot(warmFinSpeech);
         taskUIManager.TaskIndexInc();
+        StartCoroutine(ReminderCoroutine());
+
+    }
+
+    private IEnumerator ReminderCoroutine()
+    {
+        // Wait for 10 seconds
+        yield return new WaitForSeconds(10f);
+
+        // Check if the milk is still in the socket
+        if (socketInteractor.selectTarget != null)
+        {
+            // Execute the reminder logic
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+            audioSource.PlayOneShot(overHeatSpeech);
+            isOverHeat = true;
+            Debug.Log("OverHeat");
+            taskUIManager.TaskIndexDec();
+            StartCoroutine(SetBackOverHeatBool());
+            // Add any additional logic here
+        }
+
+      
+    }
+
+    private IEnumerator SetBackOverHeatBool()
+    {
+        yield return StartCoroutine(screenFader.FadeIn());
+        yield return new WaitForSeconds(2f);
+        Debug.Log("reset Bool");
+        isOverHeat = false;
+        isWarmedUp = false;
+        isPlayedWarmSpeech = false;
+        milk.transform.position =milkPos.position;
+        stove.transform.position = stovePos.position;
+        yield return StartCoroutine(screenFader.FadeOut());
+        bunsenBurner.ToggleBurner();
     }
 
     private XRGrabInteractable GetParentGrabInteractable()

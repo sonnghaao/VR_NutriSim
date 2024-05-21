@@ -31,6 +31,10 @@ public class ButtonPushOpenDoor : MonoBehaviour
     {
         if (!isEquipReady)
         {
+            if(audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
             audioSource.PlayOneShot(beepSound);
             audioSource.PlayOneShot(notReadyYetSound);
             ShowPanelWithMessage("You are not ready yet. Please proceed to put on your safety equipment.");

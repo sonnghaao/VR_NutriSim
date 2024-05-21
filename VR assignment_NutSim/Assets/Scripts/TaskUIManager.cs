@@ -19,7 +19,7 @@ public class TaskUIManager : MonoBehaviour
     public ScreenFader screenFader;
 
 
-    private int taskIndex;
+    private static int taskIndex;
     private string taskMsg;
 
     private bool hasShownStartGuide;
@@ -68,17 +68,18 @@ public class TaskUIManager : MonoBehaviour
                 }
                 break;
             case 2:
+                taskMsg = "Turn on the Bunsen burner";
                 if (!hasShownBunsenMessage)
                 {
-                    taskMsg = "Turn on the Bunsen burner";
+                    
                     audioSource.PlayOneShot(bunsenSpeech);
                     hasShownBunsenMessage = true;
                 }
                 break;
             case 3:
-                if(!hasShownMilkOnMessage)
+                taskMsg = "Warm up the milk.";
+                if (!hasShownMilkOnMessage)
                 {
-                    taskMsg = "Warm up the milk.";
                     audioSource.PlayOneShot(warmMilkSpeech);
                     hasShownMilkOnMessage=true;
                 }
@@ -190,6 +191,11 @@ public class TaskUIManager : MonoBehaviour
     public void TaskIndexInc()
     {
         taskIndex++;
+    }
+
+    public void TaskIndexDec()
+    {
+        taskIndex--;
     }
 
     public void GatherCountInc()

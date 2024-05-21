@@ -15,7 +15,12 @@ public class MaterialGrab : MonoBehaviour
 
     private XRGrabInteractable grabInteractable;
     private string message;
-    private static bool isGatherComplete= false;
+    private static bool isGatherComplete;
+
+    void Start()
+    {
+        isGatherComplete = false;
+    }
 
     private void OnEnable()
     {
