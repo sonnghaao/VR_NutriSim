@@ -54,8 +54,9 @@ public class AllSocketsChecker : MonoBehaviour
                     return;
                 }
             }
-
+            
             // If all sockets have objects
+
             ShowPanelWithMessage(nextStepMessage);
         }
         
@@ -65,6 +66,10 @@ public class AllSocketsChecker : MonoBehaviour
     {
         panel.SetActive(true);
         isGatherComplete= true;
+        if(audioSource.isPlaying)
+        {
+            audioSource.Stop();
+        }
         audioSource.PlayOneShot(beepSound);
         audioSource.PlayOneShot(gatherCompleteSpeech);
         mg.CompleteGather();

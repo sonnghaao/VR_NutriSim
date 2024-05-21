@@ -185,7 +185,7 @@ public class WarmingMilk : MonoBehaviour
     private IEnumerator SetBackOverHeatBool()
     {
         yield return StartCoroutine(screenFader.FadeIn());
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         Debug.Log("reset Bool");
         isOverHeat = false;
         isWarmedUp = false;

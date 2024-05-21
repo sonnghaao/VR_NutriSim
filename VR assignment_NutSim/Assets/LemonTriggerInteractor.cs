@@ -97,7 +97,7 @@ public class LemonTriggerInteractor : MonoBehaviour
             Rigidbody rb = drop.GetComponent<Rigidbody>();
             if (rb != null)
             {
-                rb.AddForce(Vector3.down * 2.5f, ForceMode.Impulse); // Apply a downward force to the drop
+                rb.AddForce(Vector3.down * 1f, ForceMode.Impulse); // Apply a downward force to the drop
             }
         }
     }
