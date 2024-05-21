@@ -72,6 +72,10 @@ public class MaterialGrab : MonoBehaviour
             }
             else
             {
+                if (audioSource.isPlaying)
+                {
+                    audioSource.Stop();
+                }
                 audioSource.PlayOneShot(notBringSpeech);
                 ShowPanelWithMessage("These are not the materials or items required for the experiment.");
             }
